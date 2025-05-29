@@ -12,11 +12,12 @@ The system evaluates multiple prompt styles and model types using metrics such a
 ## Features
 
 - Side-by-side evaluation of ICL and fine-tuned models
-- Comparison of Zero-shot, Few-shot, and Chain-of-thought prompting styles
-- Few-shot scaling analysis for QA tasks
-- Custom dataset support via CSV upload
-- Real-time model output and performance visualization
-- LaTeX table generation for report inclusion
+- Prompt-style comparison: Zero-shot, Few-shot, Chain-of-thought
+- Few-shot scaling analysis for question answering tasks
+- Visual summaries of Accuracy, Precision, Recall, F1, and other metrics
+- Response time comparisons between models and prompt styles
+- Live model output display for each task and setting
+- LaTeX table and PNG graph export options
 
 ---
 
@@ -24,11 +25,14 @@ The system evaluates multiple prompt styles and model types using metrics such a
 
 ```plaintext
 icl_vs_finetuning/
-├── app.py                    # Streamlit frontend
-├── utils.py                  # Evaluation metric implementations
-├── prompts.py                # Prompt generation logic
-├── examples.json             # Few-shot examples for QA
+├── app.py                    # Streamlit application
+├── utils.py                  # Metric implementations
+├── prompts.py                # Prompt template generator
+├── examples.json             # Few-shot input examples
 ├── requirements.txt          # Python dependencies
+├── icl_vs_ft_notebook.ipynb  # Supporting research notebook
+├── results/                  # All screenshot result images
+
 
 ```
 
@@ -74,4 +78,32 @@ streamlit run app.py
 
 ---
 
+## Visual Outputs
 
+All performance visualizations and results screenshots are located in the figures/ directory. This includes:
+
+ - Metric bar charts (Accuracy, F1, Precision, Recall)
+
+ - Prompt style impact comparisons
+
+ - Few-shot scaling performance curves
+
+ - ICL vs Fine-Tuned answer comparisons
+
+ - Response time analysis
+
+---
+
+## Results Overview
+
+The experimental results indicate that fine-tuned models consistently outperform in-context learners in terms of both accuracy and stability across tasks. However, ICL models demonstrated significant adaptability in few-shot and chain-of-thought scenarios, particularly in question answering. Ensemble fine-tuned models achieved the highest performance on AG News and SQuAD, while ICL models like LLaMA3 performed competitively with sufficient prompt tuning.
+
+Key observations:
+- Fine-tuned models achieved higher average F1 scores and lower variance
+- Prompt style had a notable impact: Chain-of-thought prompts improved ICL QA performance
+- Few-shot scaling showed diminishing returns beyond 4–6 shots
+- Translation tasks yielded better BLEU and BERTScore under fine-tuning
+
+These findings suggest that while fine-tuning yields the best raw performance, ICL is a viable and flexible alternative in constrained or rapid-deployment scenarios.
+
+---
