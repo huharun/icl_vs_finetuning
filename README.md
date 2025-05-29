@@ -1,40 +1,40 @@
-# 🧠 In-Context Learning vs Fine-Tuning: Comparative Analysis on NLP Tasks
+# In-Context Learning vs Fine-Tuning: Comparative Analysis on NLP Tasks
 
-This project compares **In-Context Learning (ICL)** and **Fine-Tuning** on standard NLP tasks: 
-- **Question Answering** (SQuAD)
-- **Text Classification** (AG News)
-- **Translation** (WMT - English to French)
+This project presents a comparative study between In-Context Learning (ICL) and Fine-Tuning on standard NLP tasks:
+- Question Answering (SQuAD)
+- Text Classification (AG News)
+- Translation (WMT14 English to French)
 
-We evaluate performance using multiple metrics: **F1, Exact Match, ROUGE-L, Accuracy, Precision, Recall, BLEU, BERTScore,** and **ChrF**. The app is built with **Streamlit**, integrated with **Hugging Face Transformers**, and **Ollama** (for LLaMA3 and DeepSeek-R1).
-
----
-
-## 🚀 Features
-
-- Side-by-side comparison of ICL and fine-tuned models
-- Visualize metrics with Altair charts
-- Prompt-style experiments: Zero-shot, Few-shot, Chain-of-thought
-- Few-shot scaling effect for QA
-- Upload your own CSV for batch evaluation
-- Export results as CSV/PNG
-- LaTeX table generator for reports
+The system evaluates multiple prompt styles and model types using metrics such as F1, Exact Match, ROUGE-L, Accuracy, Precision, Recall, BLEU, BERTScore, and ChrF. It is implemented using Streamlit, Hugging Face Transformers, and Ollama (for running models like LLaMA3 and DeepSeek-R1).
 
 ---
 
-## 📁 Project Structure
+## Features
+
+- Side-by-side evaluation of ICL and fine-tuned models
+- Comparison of Zero-shot, Few-shot, and Chain-of-thought prompting styles
+- Few-shot scaling analysis for QA tasks
+- Custom dataset support via CSV upload
+- Real-time model output and performance visualization
+- LaTeX table generation for report inclusion
+
+---
+
+## Project Structure
 
 ```plaintext
 icl_vs_finetuning/
 ├── app.py                    # Streamlit frontend
-├── utils.py                  # All evaluation metric functions
-├── prompts.py               # Prompt generation logic
-├── examples.json            # Few-shot examples for QA
-├── requirements.txt         # Python dependencies
+├── utils.py                  # Evaluation metric implementations
+├── prompts.py                # Prompt generation logic
+├── examples.json             # Few-shot examples for QA
+├── requirements.txt          # Python dependencies
+
 ```
 
 ---
 
-## 📦 Setup Instructions
+## Setup Instructions
 
 ### 🔧 1. Clone & Install
 ```bash
@@ -43,20 +43,20 @@ cd icl-vs-finetuning
 pip install -r requirements.txt
 ```
 
-### 🤖 2. Install Ollama & Pull Models
+### 2. Install Ollama & Pull Models
 ```bash
 ollama run llama3
 ollama run deepseek
 ```
 
-### ▶️ 3. Run the App
+### 3. Run the App
 ```bash
 streamlit run app.py
 ```
 
 ---
 
-## 📊 Dataset Sources
+## Dataset Sources
 
 - [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/)
 - [AG News](https://www.kaggle.com/datasets/amananandrai/ag-news-classification-dataset)
@@ -64,7 +64,7 @@ streamlit run app.py
 
 ---
 
-## 🧪 Evaluation Metrics
+## Evaluation Metrics
 
 | Task               | Metrics Used                             |
 |--------------------|-------------------------------------------|
@@ -74,7 +74,7 @@ streamlit run app.py
 
 ---
 
-## 📂 Custom Dataset Format
+## Custom Dataset Format
 
 Upload a CSV file with the following headers:
 ```csv
@@ -84,21 +84,3 @@ Question Answering (SQuAD),"Python is a language.","What is Python?","a language
 
 ---
 
-## 📄 Citation
-
-If you use this project, please cite:
-
-```
-@misc{icl-vs-finetuning-2025,
-  title={In-Context Learning vs Fine-Tuning: Comparative Analysis on NLP Tasks},
-  author={Your Team},
-  year={2025},
-  note={CSC 7825 - Machine Learning Course Project}
-}
-```
-
----
-
-## 💬 Contact
-
-For questions, reach out via GitHub Issues or contact [youremail@example.com].
