@@ -74,13 +74,4 @@ streamlit run app.py
 
 ---
 
-## Custom Dataset Format
-
-Upload a CSV file with the following headers:
-```csv
-task,context,question,expected,prompt_style
-Question Answering (SQuAD),"Python is a language.","What is Python?","a language","Few-Shot"
-```
-
----
 
