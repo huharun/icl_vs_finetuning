@@ -1,0 +1,6 @@
+streamlit
+transformers
+scikit-learn
+evaluate
+pandas
+altair

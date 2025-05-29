@@ -1,0 +1,12 @@
+[
+  {
+    "context": "Paris is the capital of France.",
+    "question": "What is the capital of France?",
+    "answer": "Paris"
+  },
+  {
+    "context": "Python is a programming language.",
+    "question": "What is Python?",
+    "answer": "a programming language"
+  }
+]
